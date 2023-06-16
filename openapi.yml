@@ -697,7 +697,7 @@ paths:
       - $ref: '#/components/parameters/domain-id'
     get:
       tags:
-        - Domains
+      - Domains
       summary: 'Returning a single domain.'
       description: |
         Returns information of a single domain specified by its ID.
@@ -830,7 +830,7 @@ paths:
   /certificates:
     get:
       tags:
-      - Certificates
+       - Certificates
       summary: 'Listing all certificates.'
       description: |
         Returns a list of all certificates on the server.
@@ -867,7 +867,7 @@ paths:
       - $ref: '#/components/parameters/certificate-id'
     get:
       tags:
-        - Certificates
+      - Certificates
       summary: 'Returning a single certificate.'
       description: |
         Returns information of a single certificate specified by its ID.
@@ -933,7 +933,7 @@ paths:
   /emails:
     get:
       tags:
-      - Emails
+       - Emails
       summary: 'Listing all email accounts.'
       description: |
         Returns a list of all email accounts on the server.
@@ -982,7 +982,7 @@ paths:
       - $ref: '#/components/parameters/email-id'
     get:
       tags:
-        - Emails
+      - Emails
       summary: 'Returning a single email account.'
       description: |
         Returns information of a single email account specified by its ID.
@@ -1104,7 +1104,7 @@ paths:
       - $ref: '#/components/parameters/database-id'
     get:
       tags:
-        - Databases
+      - Databases
       summary: 'Returning a single database and its database user.'
       description: |
         Returns information of a database and its database user specified by its ID.
@@ -1176,7 +1176,7 @@ paths:
   /ftp-users:
     get:
       tags:
-      - FTP users
+       - FTP users
       summary: 'Listing all FTP users.'
       description: |
         Returns a list of all FTP users on the server.
@@ -1226,7 +1226,7 @@ paths:
       - $ref: '#/components/parameters/ftp-user-id'
     get:
       tags:
-        - FTP users
+      - FTP users
       summary: 'Returning a single FTP user.'
       description: |
         Returns information of a single FTP user specified by its ID.
@@ -1298,7 +1298,7 @@ paths:
   /scheduled-tasks:
     get:
       tags:
-      - Scheduled tasks
+       - Scheduled tasks
       summary: 'Listing all scheduled tasks.'
       description: |
         Returns a list of all scheduled tasks on the server.
@@ -1335,7 +1335,7 @@ paths:
       - $ref: '#/components/parameters/scheduled-task-id'
     get:
       tags:
-        - Scheduled tasks
+      - Scheduled tasks
       summary: 'Returning a single scheduled task.'
       description: |
         Returns information of a scheduled task specified by its ID.
@@ -1395,7 +1395,7 @@ paths:
   /directory-protections:
     get:
       tags:
-      - Directory protections
+       - Directory protections
       summary: 'Listing all directory protections.'
       description: |
         Returns a list of all directory protections on the server.
@@ -1440,7 +1440,7 @@ paths:
       - $ref: '#/components/parameters/directory-protection-id'
     get:
       tags:
-        - Directory protections
+      - Directory protections
       summary: 'Returning a single directory protection.'
       description: |
         Returns information of a single directory protection specified by its ID.
