@@ -229,7 +229,7 @@ paths:
         '401':
           $ref: '#/components/responses/401-unauthorized'
 
-# Admins --------------------------------------------------------------------
+  # Admins --------------------------------------------------------------------
 
   /admins:
     get:
@@ -243,7 +243,7 @@ paths:
         * id (default)
         * username
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/admins-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -358,7 +358,7 @@ paths:
         * id (default)
         * username
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/clients-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -553,7 +553,7 @@ paths:
         * id (default)
         * name
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/hosting-plans-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -648,56 +648,56 @@ paths:
   # Domains --------------------------------------------------------------------
 
   /domains:
-      get:
-        tags:
-          - Domains
-        summary: 'Listing all domains.'
-        description: |
-          Returns a list of all domains on this server.
+    get:
+      tags:
+        - Domains
+      summary: 'Listing all domains.'
+      description: |
+        Returns a list of all domains on this server.
 
-          You can use the following filter parameter values to filter the results.
-          * main_domains
-          * subdomains
-          * system_domains
+        You can use the following filter parameter values to filter the results.
+        * main_domains
+        * subdomains
+        * system_domains
 
-          You can use the following sort parameter values to sort the results.
-          * id (default)
-          * domain
-          * domain_utf8
-        parameters:
-          - $ref: '#/components/parameters/sort'
-          - $ref: '#/components/parameters/order'
+        You can use the following sort parameter values to sort the results.
+        * id (default)
+        * domain
+        * domain_utf8
+      parameters:
+        - $ref: '#/components/parameters/domains-sort'
+        - $ref: '#/components/parameters/order'
 
-          - $ref: '#/components/parameters/domains-main-domains'
-          - $ref: '#/components/parameters/domains-subdomains'
-          - $ref: '#/components/parameters/domains-system-domains'
-        responses:
-          '200':
-            $ref: '#/components/responses/domain-array'
-          '401':
-            $ref: '#/components/responses/401-unauthorized'
-      post:
-        tags:
-          - Domains
-        summary: 'Creating a domain.'
-        description: |
-          Creates a new domain.
-        requestBody:
-          $ref: '#/components/requestBodies/domain-post'
-        responses:
-          '201':
-            $ref: '#/components/responses/201-created'
-          '400':
-            $ref: '#/components/responses/400-bad-request'
-          '401':
-            $ref: '#/components/responses/401-unauthorized'
+        - $ref: '#/components/parameters/domains-main-domains'
+        - $ref: '#/components/parameters/domains-subdomains'
+        - $ref: '#/components/parameters/domains-system-domains'
+      responses:
+        '200':
+          $ref: '#/components/responses/domain-array'
+        '401':
+          $ref: '#/components/responses/401-unauthorized'
+    post:
+      tags:
+        - Domains
+      summary: 'Creating a domain.'
+      description: |
+        Creates a new domain.
+      requestBody:
+        $ref: '#/components/requestBodies/domain-post'
+      responses:
+        '201':
+          $ref: '#/components/responses/201-created'
+        '400':
+          $ref: '#/components/responses/400-bad-request'
+        '401':
+          $ref: '#/components/responses/401-unauthorized'
 
   /domains/{id}:
     parameters:
       - $ref: '#/components/parameters/domain-id'
     get:
       tags:
-      - Domains
+        - Domains
       summary: 'Returning a single domain.'
       description: |
         Returns information of a single domain specified by its ID.
@@ -839,7 +839,7 @@ paths:
         * id (default)
         * name
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/certificates-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -867,7 +867,7 @@ paths:
       - $ref: '#/components/parameters/certificate-id'
     get:
       tags:
-      - Certificates
+        - Certificates
       summary: 'Returning a single certificate.'
       description: |
         Returns information of a single certificate specified by its ID.
@@ -943,7 +943,7 @@ paths:
         * email
         * email_utf8
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/emails-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -982,7 +982,7 @@ paths:
       - $ref: '#/components/parameters/email-id'
     get:
       tags:
-      - Emails
+        - Emails
       summary: 'Returning a single email account.'
       description: |
         Returns information of a single email account specified by its ID.
@@ -1068,7 +1068,7 @@ paths:
         * database_name
         * database_username
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/databases-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -1104,7 +1104,7 @@ paths:
       - $ref: '#/components/parameters/database-id'
     get:
       tags:
-      - Databases
+        - Databases
       summary: 'Returning a single database and its database user.'
       description: |
         Returns information of a database and its database user specified by its ID.
@@ -1185,7 +1185,7 @@ paths:
         * id (default)
         * username
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/ftp-users-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -1226,7 +1226,7 @@ paths:
       - $ref: '#/components/parameters/ftp-user-id'
     get:
       tags:
-      - FTP users
+        - FTP users
       summary: 'Returning a single FTP user.'
       description: |
         Returns information of a single FTP user specified by its ID.
@@ -1307,7 +1307,7 @@ paths:
         * id (default)
         * type
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/scheduled-tasks-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -1335,7 +1335,7 @@ paths:
       - $ref: '#/components/parameters/scheduled-task-id'
     get:
       tags:
-      - Scheduled tasks
+        - Scheduled tasks
       summary: 'Returning a single scheduled task.'
       description: |
         Returns information of a scheduled task specified by its ID.
@@ -1405,7 +1405,7 @@ paths:
         * auth_name
         * username
       parameters:
-        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/directory-protections-sort'
         - $ref: '#/components/parameters/order'
       responses:
         '200':
@@ -1440,7 +1440,7 @@ paths:
       - $ref: '#/components/parameters/directory-protection-id'
     get:
       tags:
-      - Directory protections
+        - Directory protections
       summary: 'Returning a single directory protection.'
       description: |
         Returns information of a single directory protection specified by its ID.
@@ -1506,13 +1506,6 @@ components:
   parameters:
 
     # General query parameters.
-    sort:
-      name: sort
-      in: query
-      description: 'The property you want to sort by.'
-      required: false
-      schema:
-        type: string
     order:
       name: order
       in: query
@@ -1584,6 +1577,18 @@ components:
         default: true
 
     # parameters/admin-*
+    admins-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'username'
+        default: id
+
     admin-id:
       name: id
       in: path
@@ -1601,6 +1606,18 @@ components:
         type: string
 
     # parameters/client-*
+    clients-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'username'
+        default: id
+
     client-id:
       name: id
       in: path
@@ -1682,6 +1699,18 @@ components:
         default: true
 
     # parameters/hosting-plan-*
+    hosting-plans-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'name'
+        default: id
+
     hosting-plan-id:
       name: id
       in: path
@@ -1699,6 +1728,19 @@ components:
         type: string
 
     # parameters/domain-*
+    domains-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'domain'
+          - 'domain_utf8'
+        default: id
+
     domains-main-domains:
       name: main_domains
       in: query
@@ -1742,6 +1784,18 @@ components:
         type: string
 
     # parameters/certificate-*
+    certificates-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'name'
+        default: id
+
     certificate-id:
       name: id
       in: path
@@ -1759,6 +1813,19 @@ components:
         type: string
 
     # parameters/email-*
+    emails-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'email'
+          - 'email_utf8'
+        default: id
+
     email-id:
       name: id
       in: path
@@ -1776,6 +1843,19 @@ components:
         type: string
 
     # parameters/database-*
+    databases-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'database_name'
+          - 'database_username'
+        default: id
+
     database-id:
       name: id
       in: path
@@ -1793,6 +1873,18 @@ components:
         type: string
 
     # parameters/ftp-user-*
+    ftp-users-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'username'
+        default: id
+
     ftp-user-id:
       name: id
       in: path
@@ -1810,7 +1902,19 @@ components:
         type: string
 
 
-    # parameters/ftp-user-*
+    # parameters/scheduled-task-*
+    scheduled-tasks-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'type'
+        default: id
+
     scheduled-task-id:
       name: id
       in: path
@@ -1821,6 +1925,19 @@ components:
         minimum: 1
 
     # parameters/directory-protection-*
+    directory-protections-sort:
+      name: sort
+      in: query
+      description: 'The property you want to sort by.'
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'id'
+          - 'auth_name'
+          - 'username'
+        default: id
+
     directory-protection-id:
       name: id
       in: path
@@ -3034,7 +3151,7 @@ components:
               type: integer
               example: 5
 
-  # schemas/client-traffic
+    # schemas/client-traffic
     client-traffic:
       type: object
       properties:
@@ -3339,7 +3456,7 @@ components:
               type: string
               description: |
                 Either a relative path to target folder (relative from clients /www/ folder), or an URL.<br>
-                When specifing a URL, they have to start with "http://" or "https://."
+                When specifying a URL, they have to start with "http://" or "https://."
               example: 'https://www.keyhelp.de'
             is_forwarding:
               type: boolean
@@ -3444,21 +3561,21 @@ components:
             other:
               type: array
               items:
-                  type: object
-                  properties:
-                    host:
-                      type: string
-                      example: '@'
-                    ttl:
-                      type: integer
-                      default: 86400
-                      example: 86400
-                    type:
-                      type: string
-                      example: 'A'
-                    value:
-                      type: string
-                      example: '192.168.178.1'
+                type: object
+                properties:
+                  host:
+                    type: string
+                    example: '@'
+                  ttl:
+                    type: integer
+                    default: 86400
+                    example: 86400
+                  type:
+                    type: string
+                    example: 'A'
+                  value:
+                    type: string
+                    example: '192.168.178.1'
 
     # schemas/certificates
     certificate:
