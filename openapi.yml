@@ -650,7 +650,7 @@ paths:
   /domains:
       get:
         tags:
-        - Domains
+          - Domains
         summary: 'Listing all domains.'
         description: |
           Returns a list of all domains on this server.
@@ -1058,7 +1058,7 @@ paths:
   /databases:
     get:
       tags:
-      - Databases
+        - Databases
       summary: 'Listing all databases.'
       description: |
         Returns a list of all databases on the server.
@@ -3559,8 +3559,8 @@ components:
                   default: 3600
                   example: 3600
             other:
-                type: array
-                items:
+              type: array
+              items:
                   type: object
                   properties:
                     host:
