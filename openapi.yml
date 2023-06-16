@@ -229,7 +229,7 @@ paths:
         '401':
           $ref: '#/components/responses/401-unauthorized'
 
-  # Admins --------------------------------------------------------------------
+# Admins --------------------------------------------------------------------
 
   /admins:
     get:
@@ -650,7 +650,7 @@ paths:
   /domains:
     get:
       tags:
-        - Domains
+      - Domains
       summary: 'Listing all domains.'
       description: |
         Returns a list of all domains on this server.
@@ -830,7 +830,7 @@ paths:
   /certificates:
     get:
       tags:
-        - Certificates
+      - Certificates
       summary: 'Listing all certificates.'
       description: |
         Returns a list of all certificates on the server.
@@ -933,7 +933,7 @@ paths:
   /emails:
     get:
       tags:
-        - Emails
+      - Emails
       summary: 'Listing all email accounts.'
       description: |
         Returns a list of all email accounts on the server.
@@ -1058,7 +1058,7 @@ paths:
   /databases:
     get:
       tags:
-        - Databases
+      - Databases
       summary: 'Listing all databases.'
       description: |
         Returns a list of all databases on the server.
@@ -1176,7 +1176,7 @@ paths:
   /ftp-users:
     get:
       tags:
-        - FTP users
+      - FTP users
       summary: 'Listing all FTP users.'
       description: |
         Returns a list of all FTP users on the server.
@@ -1298,7 +1298,7 @@ paths:
   /scheduled-tasks:
     get:
       tags:
-        - Scheduled tasks
+      - Scheduled tasks
       summary: 'Listing all scheduled tasks.'
       description: |
         Returns a list of all scheduled tasks on the server.
@@ -1395,7 +1395,7 @@ paths:
   /directory-protections:
     get:
       tags:
-        - Directory protections
+      - Directory protections
       summary: 'Listing all directory protections.'
       description: |
         Returns a list of all directory protections on the server.
@@ -1902,7 +1902,7 @@ components:
         type: string
 
 
-    # parameters/scheduled-task-*
+    # parameters/ftp-user-*
     scheduled-tasks-sort:
       name: sort
       in: query
@@ -3151,7 +3151,7 @@ components:
               type: integer
               example: 5
 
-    # schemas/client-traffic
+  # schemas/client-traffic
     client-traffic:
       type: object
       properties:
@@ -3456,7 +3456,7 @@ components:
               type: string
               description: |
                 Either a relative path to target folder (relative from clients /www/ folder), or an URL.<br>
-                When specifying a URL, they have to start with "http://" or "https://."
+                When specifing a URL, they have to start with "http://" or "https://."
               example: 'https://www.keyhelp.de'
             is_forwarding:
               type: boolean
