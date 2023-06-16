@@ -648,49 +648,49 @@ paths:
   # Domains --------------------------------------------------------------------
 
   /domains:
-    get:
-      tags:
-      - Domains
-      summary: 'Listing all domains.'
-      description: |
-        Returns a list of all domains on this server.
-
-        You can use the following filter parameter values to filter the results.
-        * main_domains
-        * subdomains
-        * system_domains
-
-        You can use the following sort parameter values to sort the results.
-        * id (default)
-        * domain
-        * domain_utf8
-      parameters:
-        - $ref: '#/components/parameters/domains-sort'
-        - $ref: '#/components/parameters/order'
-
-        - $ref: '#/components/parameters/domains-main-domains'
-        - $ref: '#/components/parameters/domains-subdomains'
-        - $ref: '#/components/parameters/domains-system-domains'
-      responses:
-        '200':
-          $ref: '#/components/responses/domain-array'
-        '401':
-          $ref: '#/components/responses/401-unauthorized'
-    post:
-      tags:
+      get:
+        tags:
         - Domains
-      summary: 'Creating a domain.'
-      description: |
-        Creates a new domain.
-      requestBody:
-        $ref: '#/components/requestBodies/domain-post'
-      responses:
-        '201':
-          $ref: '#/components/responses/201-created'
-        '400':
-          $ref: '#/components/responses/400-bad-request'
-        '401':
-          $ref: '#/components/responses/401-unauthorized'
+        summary: 'Listing all domains.'
+        description: |
+          Returns a list of all domains on this server.
+
+          You can use the following filter parameter values to filter the results.
+          * main_domains
+          * subdomains
+          * system_domains
+
+          You can use the following sort parameter values to sort the results.
+          * id (default)
+          * domain
+          * domain_utf8
+        parameters:
+          - $ref: '#/components/parameters/domains-sort'
+          - $ref: '#/components/parameters/order'
+
+          - $ref: '#/components/parameters/domains-main-domains'
+          - $ref: '#/components/parameters/domains-subdomains'
+          - $ref: '#/components/parameters/domains-system-domains'
+        responses:
+          '200':
+            $ref: '#/components/responses/domain-array'
+          '401':
+            $ref: '#/components/responses/401-unauthorized'
+      post:
+        tags:
+          - Domains
+        summary: 'Creating a domain.'
+        description: |
+          Creates a new domain.
+        requestBody:
+          $ref: '#/components/requestBodies/domain-post'
+        responses:
+          '201':
+            $ref: '#/components/responses/201-created'
+          '400':
+            $ref: '#/components/responses/400-bad-request'
+          '401':
+            $ref: '#/components/responses/401-unauthorized'
 
   /domains/{id}:
     parameters:
@@ -830,7 +830,7 @@ paths:
   /certificates:
     get:
       tags:
-       - Certificates
+        - Certificates
       summary: 'Listing all certificates.'
       description: |
         Returns a list of all certificates on the server.
@@ -933,7 +933,7 @@ paths:
   /emails:
     get:
       tags:
-       - Emails
+        - Emails
       summary: 'Listing all email accounts.'
       description: |
         Returns a list of all email accounts on the server.
@@ -1176,7 +1176,7 @@ paths:
   /ftp-users:
     get:
       tags:
-       - FTP users
+        - FTP users
       summary: 'Listing all FTP users.'
       description: |
         Returns a list of all FTP users on the server.
@@ -1298,7 +1298,7 @@ paths:
   /scheduled-tasks:
     get:
       tags:
-       - Scheduled tasks
+        - Scheduled tasks
       summary: 'Listing all scheduled tasks.'
       description: |
         Returns a list of all scheduled tasks on the server.
@@ -1395,7 +1395,7 @@ paths:
   /directory-protections:
     get:
       tags:
-       - Directory protections
+        - Directory protections
       summary: 'Listing all directory protections.'
       description: |
         Returns a list of all directory protections on the server.
@@ -3559,23 +3559,23 @@ components:
                   default: 3600
                   example: 3600
             other:
-              type: array
-              items:
-                type: object
-                properties:
-                  host:
-                    type: string
-                    example: '@'
-                  ttl:
-                    type: integer
-                    default: 86400
-                    example: 86400
-                  type:
-                    type: string
-                    example: 'A'
-                  value:
-                    type: string
-                    example: '192.168.178.1'
+                type: array
+                items:
+                  type: object
+                  properties:
+                    host:
+                      type: string
+                      example: '@'
+                    ttl:
+                      type: integer
+                      default: 86400
+                      example: 86400
+                    type:
+                      type: string
+                      example: 'A'
+                    value:
+                      type: string
+                      example: '192.168.178.1'
 
     # schemas/certificates
     certificate:
